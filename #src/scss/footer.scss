@@ -1,0 +1,109 @@
+.footer {
+	padding: 60px 0;
+	background: #c8a35f;
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		@media screen and (max-width: $md2+px) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__column {
+		a {
+			display: block;
+			position: relative;
+			margin-top: 10px;
+			&:first-child {
+				margin-top: 0;
+			}
+			&:before {
+				position: absolute;
+				content: "";
+				height: 1px;
+				width: 0;
+				background: #fff;
+				transition: 0.2s;
+				bottom: 0px;
+				left: 0;
+			}
+			@media screen and (min-width: $md2+px) {
+				&:hover {
+					color: #fff;
+					transition: 0.2s;
+					&:before {
+						width: 100%;
+						transition: 0.2s;
+					}
+				}
+				&:not(:hover) {
+					transition: 0.2s;
+				}
+			}
+		}
+		&:last-child {
+			@media screen and (max-width: $md2+px) {
+				margin-top: 20px;
+			}
+			p {
+				position: relative;
+				color: #000;
+				&::before {
+					position: absolute;
+					content: "";
+					height: 1px;
+					transition: 0.2s;
+					left: 0;
+					width: 100%;
+					bottom: 0;
+					background: #000;
+				}
+			}
+		}
+	}
+	.contact-footer {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		@media screen and (max-width: $md3+px) {
+			flex-direction: column;
+		}
+		&__column {
+			@media screen and (max-width: $md3+px) {
+				text-align: center;
+			}
+			margin-bottom: 20px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			p {
+				margin-bottom: 10px;
+			}
+			&:last-child {
+				margin-left: 90px;
+				@media screen and (max-width: $md3+px) {
+					margin-left: 0;
+				}
+			}
+		}
+
+		&__logo {
+			width: 160px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: 30px;
+		}
+
+		&__mail {
+			display: inline;
+			color: #000;
+			&:before {
+				bottom: -5px;
+			}
+		}
+	}
+}
